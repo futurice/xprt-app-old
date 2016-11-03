@@ -1,4 +1,4 @@
-package com.pepperoniapptemplate;
+package com.scool;
 
 import android.app.Application;
 import android.util.Log;
