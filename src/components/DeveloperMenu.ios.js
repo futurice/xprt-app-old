@@ -1,6 +1,6 @@
 import React from 'react';
 import * as snapshot from '../utils/snapshot';
-import * as auth0 from '../services/auth0';
+//import * as auth0 from '../services/auth0';
 
 import {
   TouchableOpacity,
@@ -19,8 +19,11 @@ const DeveloperMenu = React.createClass({
   showDeveloperMenu() {
     const options = {
       clearState: 0,
+      /*
       showLogin: 1,
       cancel: 2
+      */
+      cancel: 1
     };
 
     const callback = async index => {
@@ -28,10 +31,12 @@ const DeveloperMenu = React.createClass({
         await snapshot.clearSnapshot();
         console.warn('(╯°□°）╯︵ ┻━┻ \nState cleared, Cmd+R to reload the application now');
       }
+      /*
       else if (index === options.showLogin) {
         await auth0.showLogin();
         console.log('Show auth0 login screen');
       }
+      */
     };
 
     ActionSheetIOS.showActionSheetWithOptions({

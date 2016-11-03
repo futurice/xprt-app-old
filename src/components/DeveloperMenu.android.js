@@ -1,6 +1,6 @@
 import React from 'react';
 import * as snapshot from '../utils/snapshot';
-import * as auth0 from '../services/auth0';
+//import * as auth0 from '../services/auth0';
 
 import {
   View,
@@ -30,11 +30,13 @@ const DeveloperMenu = React.createClass({
     this.closeMenu();
   },
 
+  /*
   async showLogin() {
     await auth0.showLogin();
     console.log('Show auth0 login screen');
     this.closeMenu();
   },
+  */
 
   closeMenu() {
     this.setState({isVisible: false});
@@ -68,7 +70,7 @@ const DeveloperMenu = React.createClass({
 
     const buttons = [
       this.renderMenuItem('Clear state', this.clearState),
-      this.renderMenuItem('Show login', this.showLogin),
+      //this.renderMenuItem('Show login', this.showLogin),
       this.renderMenuItem('Cancel', this.closeMenu)
     ];
 

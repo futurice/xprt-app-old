@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import {View, StyleSheet, ActivityIndicator} from 'react-native';
 import NavigationViewContainer from './navigation/NavigationViewContainer';
-import * as auth0 from '../services/auth0';
+//import * as auth0 from '../services/auth0';
 import * as snapshotUtil from '../utils/snapshot';
 import * as SessionStateActions from '../modules/session/SessionState';
 import store from '../redux/store';
@@ -30,6 +30,7 @@ const AppView = React.createClass({
       });
   },
 
+  /*
   componentWillReceiveProps({isReady, isLoggedIn}) {
     if (!this.props.isReady) {
       if (isReady && !isLoggedIn) {
@@ -37,6 +38,7 @@ const AppView = React.createClass({
       }
     }
   },
+  */
 
   render() {
     if (!this.props.isReady) {
