@@ -40,12 +40,17 @@ const WelcomeView = React.createClass({
 
     return (
       <View style={styles.container}>
-        <Text style={styles.linkButton}>
+        <Text style={styles.welcome}>
           {'Welcome to SCOOL!'}
+        </Text>
+        <Text style={styles.loginText}>
+          {'Log in as:'}
         </Text>
         <ButtonGroup
           onPress={this.updateIndex}
           selectedIndex={selectedIndex}
+          containerStyle={styles.buttonGroup}
+          textStyle={styles.buttonGroupText}
           buttons={buttons} />
 
         <LoginForm
@@ -56,51 +61,31 @@ const WelcomeView = React.createClass({
   }
 });
 
-const circle = {
-  borderWidth: 0,
-  borderRadius: 40,
-  width: 80,
-  height: 80
-};
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: 'white'
   },
-  userContainer: {
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  userProfilePhoto: {
-    ...circle,
-    alignSelf: 'center'
-  },
-  counterButton: {
-    ...circle,
-    backgroundColor: 'green',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 20
-  },
-  counter: {
-    color: 'white',
-    fontSize: 20,
-    textAlign: 'center'
-  },
   welcome: {
+    fontSize: 20,
     textAlign: 'center',
     color: 'black',
     marginBottom: 5,
     padding: 5
   },
-  linkButton: {
+  loginText: {
+    fontSize: 18,
     textAlign: 'center',
-    color: '#CCCCCC',
+    color: '#AAAAAA',
     marginBottom: 10,
     padding: 5
+  },
+  buttonGroup: {
+    height: 64
+  },
+  buttonGroupText: {
+    color: '#CCCCCC',
+    fontSize: 32
   }
 });
 

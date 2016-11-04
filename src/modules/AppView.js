@@ -46,17 +46,13 @@ const AppView = React.createClass({
     console.log(this.props.isReady);
     if (!this.props.isReady) {
       return (
-        <View>
-          <ActivityIndicator style={styles.centered}/>
-        </View>
+        <ActivityIndicator style={styles.centered}/>
       );
     }
 
     if (!this.props.isLoggedIn) {
       return (
-        <View>
-          <WelcomeViewContainer style={styles.centered}/>
-        </View>
+        <WelcomeViewContainer />
       );
     }
 
