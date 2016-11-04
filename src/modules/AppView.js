@@ -7,6 +7,8 @@ import * as SessionStateActions from '../modules/session/SessionState';
 import store from '../redux/store';
 import DeveloperMenu from '../components/DeveloperMenu';
 
+import WelcomeViewContainer from './login/WelcomeViewContainer';
+
 const AppView = React.createClass({
   propTypes: {
     isReady: PropTypes.bool.isRequired,
@@ -30,21 +32,30 @@ const AppView = React.createClass({
       });
   },
 
-  /*
   componentWillReceiveProps({isReady, isLoggedIn}) {
     if (!this.props.isReady) {
       if (isReady && !isLoggedIn) {
-        auth0.showLogin();
+
+        //auth0.showLogin();
       }
     }
   },
-  */
 
   render() {
+    console.log(this.props.isLoggedIn);
+    console.log(this.props.isReady);
     if (!this.props.isReady) {
       return (
         <View>
           <ActivityIndicator style={styles.centered}/>
+        </View>
+      );
+    }
+
+    if (!this.props.isLoggedIn) {
+      return (
+        <View>
+          <WelcomeViewContainer style={styles.centered}/>
         </View>
       );
     }

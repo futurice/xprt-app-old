@@ -21,14 +21,18 @@ const TabBar = React.createClass({
   render() {
     return (
       <View style={[styles.navigationBar, {height: this.props.height}]}>
-        {this.props.tabs.routes.map((route, index) => (
-          <TabBarButton
+        {this.props.tabs.routes.map((route, index) => {
+          if (route.hidden) {
+            return null;
+          }
+
+          return <TabBarButton
             key={'tab-bar-button-' + route.key}
             text={route.title}
             action={() => this.props.switchTab(index)}
             isSelected={index === this.props.currentTabIndex}
-          />
-        ))}
+          />;
+        })}
       </View>
     );
   }

@@ -38,6 +38,21 @@ const initialState = fromJS({
     ]
   },
   // Scenes for the `HomeTab` tab.
+  /*
+  WelcomeTab: {
+    index: 0,
+    routes: [{
+      key: 'Welcome',
+      title: 'Welcome Screen'
+    }, {
+      key: 'TeacherLogin',
+      title: 'Teacher Login'
+    }, {
+      key: 'ExpertLogin',
+      title: 'Expert Login'
+    }]
+  },
+  */
   HomeTab: {
     index: 0,
     routes: [{key: 'Counter', title: 'Counter Screen'}]
