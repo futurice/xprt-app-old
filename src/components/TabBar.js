@@ -26,12 +26,12 @@ const TabBar = React.createClass({
             return null;
           }
 
-          return <TabBarButton
+          return (<TabBarButton
             key={'tab-bar-button-' + route.key}
             text={route.title}
             action={() => this.props.switchTab(index)}
             isSelected={index === this.props.currentTabIndex}
-          />;
+          />);
         })}
       </View>
     );

@@ -11,9 +11,9 @@ import {
 import {
   Button,
   ButtonGroup
-} from 'react-native-elements'
+} from 'react-native-elements';
 
-import LoginForm from '../../components/LoginForm'
+import LoginForm from '../../components/LoginForm';
 
 const WelcomeView = React.createClass({
   propTypes: {
@@ -27,7 +27,7 @@ const WelcomeView = React.createClass({
   },
 
   updateIndex(selectedIndex) {
-    this.setState({ selectedIndex });
+    this.setState({selectedIndex});
   },
 
   doLogin(credentials) {
@@ -38,7 +38,7 @@ const WelcomeView = React.createClass({
 
   render() {
     const buttons = ['Teacher', 'Expert'];
-    const { selectedIndex } = this.state;
+    const {selectedIndex} = this.state;
 
     return (
       <View style={styles.container}>
@@ -52,7 +52,6 @@ const WelcomeView = React.createClass({
           onPress={this.updateIndex}
           selectedIndex={selectedIndex}
           containerStyle={styles.buttonGroup}
-          fontSize={18}
           textStyle={styles.buttonGroupText}
           selectedBackgroundColor='yellow'
           underlayColor='white'
@@ -75,8 +74,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     color: 'black',
-    marginBottom: 5,
-    padding: 5
+    marginTop: 50,
+    marginBottom: 5
   },
   loginText: {
     fontSize: 18,
@@ -86,12 +85,11 @@ const styles = StyleSheet.create({
     padding: 5
   },
   buttonGroup: {
-    backgroundColor: 'white',
-    height: 64
+    backgroundColor: 'white'
   },
   buttonGroupText: {
     color: '#CCCCCC',
-    fontSize: 32
+    fontSize: 18
   }
 });
 

@@ -8,7 +8,7 @@ import {
 
 import {
   Button
-} from 'react-native-elements'
+} from 'react-native-elements';
 
 export default React.createClass({
   displayName: 'LoginForm',
@@ -27,16 +27,12 @@ export default React.createClass({
         <Text>E-mail:</Text>
         <TextInput
           style={styles.textInput}
-          selectionColor='yellow'
-          underlineColorAndroid='black'
           onChangeText={(email) => this.setState({email})}
           value={this.state.email}
         />
         <Text>Password:</Text>
         <TextInput
           style={styles.textInput}
-          selectionColor='yellow'
-          underlineColorAndroid='black'
           onChangeText={(password) => this.setState({password})}
           secureTextEntry={true}
           value={this.state.password}
@@ -46,7 +42,7 @@ export default React.createClass({
           buttonStyle={styles.buttonStyle}
           textStyle={styles.buttonTextStyle}
           icon={{name: 'lock-open', color: 'black'}}
-          title="Log in"
+          title='Log in'
           onPress={() => this.props.submit(this.state)}/>
       </View>
     );
@@ -65,6 +61,7 @@ const styles = StyleSheet.create({
     color: 'black'
   },
   textInput: {
+    height: 40,
     fontSize: 20
   }
 });
