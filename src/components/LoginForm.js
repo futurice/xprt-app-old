@@ -43,7 +43,15 @@ export default React.createClass({
           textStyle={styles.buttonTextStyle}
           icon={{name: 'lock-open', color: 'black'}}
           title='Log in'
-          onPress={() => this.props.submit(this.state)}/>
+          onPress={() => this.props.submit(this.state)}
+        />
+
+        <Text
+          style={styles.recoverPasswordTextStyle}
+          onPress={() => console.log('Recover Password Pressed!')}
+        >
+          Forgot your password?
+        </Text>
       </View>
     );
   }
@@ -63,5 +71,10 @@ const styles = StyleSheet.create({
   textInput: {
     height: 40,
     fontSize: 20
+  },
+  recoverPasswordTextStyle: {
+    color: 'blue',
+    textAlign: 'center',
+    marginTop: 30
   }
 });
