@@ -1,4 +1,5 @@
 import * as CounterState from './CounterState';
+import * as AuthState from '../auth/AuthState';
 import * as NavigationState from '../../modules/navigation/NavigationState';
 import React, {PropTypes} from 'react';
 import {
@@ -31,6 +32,10 @@ const CounterView = React.createClass({
       key: 'Color',
       title: 'Color Screen'
     }));
+  },
+
+  logout() {
+    this.props.dispatch(AuthState.userLogout());
   },
 
   renderUserInfo() {
@@ -87,6 +92,12 @@ const CounterView = React.createClass({
         <TouchableOpacity onPress={this.bored} accessible={true}>
           <Text style={styles.linkButton}>
             {'I\'m bored!'}
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={this.logout} accessible={true}>
+          <Text style={styles.linkButton}>
+            {'Log out'}
           </Text>
         </TouchableOpacity>
 

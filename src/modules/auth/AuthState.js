@@ -10,6 +10,7 @@ const initialState = Map({
 // Actions
 const USER_LOGIN_SUCCESS = 'AppState/USER_LOGIN_SUCCESS';
 const USER_LOGIN_ERROR = 'AppState/USER_LOGIN_ERROR';
+const USER_LOGOUT = 'AppState/USER_LOGOUT';
 
 export function onUserLoginSuccess(profile, token) {
   return {
@@ -29,6 +30,12 @@ export function onUserLoginError(error) {
   };
 }
 
+export function userLogout() {
+  return {
+    type: USER_LOGOUT
+  };
+}
+
 // Reducer
 export default function AuthStateReducer(state = initialState, action = {}) {
   switch (action.type) {
@@ -38,6 +45,8 @@ export default function AuthStateReducer(state = initialState, action = {}) {
         .set('currentUser', action.payload.profile)
         .set('authenticationToken', action.payload.token);
     case USER_LOGIN_ERROR:
+      return initialState;
+    case USER_LOGOUT:
       return initialState;
     default:
       return state;

@@ -1,4 +1,4 @@
-import * as NavigationState from '../../modules/navigation/NavigationState';
+import * as AuthState from '../auth/AuthState';
 import React, {PropTypes} from 'react';
 import {
   StyleSheet,
@@ -31,6 +31,8 @@ const WelcomeView = React.createClass({
   },
 
   doLogin(credentials) {
+    // Always succeed with login for now
+    this.props.dispatch(AuthState.onUserLoginSuccess());
     console.log(credentials);
   },
 
@@ -50,7 +52,10 @@ const WelcomeView = React.createClass({
           onPress={this.updateIndex}
           selectedIndex={selectedIndex}
           containerStyle={styles.buttonGroup}
+          fontSize={18}
           textStyle={styles.buttonGroupText}
+          selectedBackgroundColor='yellow'
+          underlayColor='white'
           buttons={buttons} />
 
         <LoginForm
@@ -81,6 +86,7 @@ const styles = StyleSheet.create({
     padding: 5
   },
   buttonGroup: {
+    backgroundColor: 'white',
     height: 64
   },
   buttonGroupText: {

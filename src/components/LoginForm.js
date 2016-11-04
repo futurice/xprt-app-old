@@ -26,11 +26,17 @@ export default React.createClass({
       <View style={styles.container}>
         <Text>E-mail:</Text>
         <TextInput
+          style={styles.textInput}
+          selectionColor='yellow'
+          underlineColorAndroid='black'
           onChangeText={(email) => this.setState({email})}
           value={this.state.email}
         />
         <Text>Password:</Text>
         <TextInput
+          style={styles.textInput}
+          selectionColor='yellow'
+          underlineColorAndroid='black'
           onChangeText={(password) => this.setState({password})}
           secureTextEntry={true}
           value={this.state.password}
@@ -38,7 +44,8 @@ export default React.createClass({
 
         <Button
           buttonStyle={styles.buttonStyle}
-          icon={{name: 'lock-open'}}
+          textStyle={styles.buttonTextStyle}
+          icon={{name: 'lock-open', color: 'black'}}
           title="Log in"
           onPress={() => this.props.submit(this.state)}/>
       </View>
@@ -51,6 +58,13 @@ const styles = StyleSheet.create({
     margin: 20
   },
   buttonStyle: {
-    marginTop: 20
+    marginTop: 20,
+    backgroundColor: 'yellow'
+  },
+  buttonTextStyle: {
+    color: 'black'
+  },
+  textInput: {
+    fontSize: 20
   }
 });
