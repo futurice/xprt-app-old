@@ -47,3 +47,6 @@ buck-out/
 android/app/libs
 android/keystores/debug.keystore
 android/app/src/main/assets
+
+#yarn
+yarn-error.log
