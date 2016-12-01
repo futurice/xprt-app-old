@@ -1,15 +1,13 @@
+import * as NavigationState from '../navigation/NavigationState';
 import * as AuthState from '../auth/AuthState';
 import React, {PropTypes} from 'react';
 import {
   StyleSheet,
-  TouchableOpacity,
-  Image,
   Text,
   View
 } from 'react-native';
 
 import {
-  Button,
   ButtonGroup
 } from 'react-native-elements';
 
@@ -36,6 +34,15 @@ const WelcomeView = React.createClass({
     console.log(credentials);
   },
 
+  recoverPassword() {
+    console.log('Recover Password Pressed!');
+    this.props.dispatch(NavigationState.pushRoute({
+      key: 'RecoverPassword',
+      title: 'Recover Password Screen'
+    }));
+    // ???
+  },
+
   render() {
     const buttons = ['Teacher', 'Expert'];
     const {selectedIndex} = this.state;
@@ -59,6 +66,7 @@ const WelcomeView = React.createClass({
 
         <LoginForm
           submit={this.doLogin}
+          recoverPassword={this.recoverPassword}
           />
       </View>
     );

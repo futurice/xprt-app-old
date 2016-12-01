@@ -13,7 +13,8 @@ import {
 export default React.createClass({
   displayName: 'LoginForm',
   propTypes: {
-    submit: PropTypes.func.isRequired
+    submit: PropTypes.func.isRequired,
+    recoverPassword: PropTypes.func.isRequired
   },
   getInitialState() {
     return {

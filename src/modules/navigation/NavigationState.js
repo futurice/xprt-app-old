@@ -18,6 +18,8 @@ export function switchTab(index) {
 
 // Action creators
 export function pushRoute(route) {
+  console.log('Pushed route:');
+  console.log(route);
   return {
     type: PUSH_ROUTE,
     payload: route
@@ -55,7 +57,10 @@ const initialState = fromJS({
   */
   HomeTab: {
     index: 0,
-    routes: [{key: 'Counter', title: 'Counter Screen'}]
+    routes: [
+      {key: 'Counter', title: 'Counter Screen'},
+      {key: 'RecoverPassword', title: 'Recover Password Screen'}
+    ]
   },
   // Scenes for the `ProfileTab` tab.
   ProfileTab: {

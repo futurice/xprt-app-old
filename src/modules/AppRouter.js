@@ -3,12 +3,19 @@
 import React from 'react';
 import CounterViewContainer from './counter/CounterViewContainer';
 import ColorViewContainer from './colors/ColorViewContainer';
+import RecoverPasswordViewContainer from './login/RecoverPasswordViewContainer';
 
 /**
  * AppRouter is responsible for mapping a navigator scene to a view
  */
 export default function AppRouter(props) {
   const key = props.scene.route.key;
+
+  console.log('Key: ' + key);
+
+  if (key === 'RecoverPassword') {
+    return <RecoverPasswordViewContainer />;
+  }
 
   if (key === 'Counter') {
     return <CounterViewContainer />;
