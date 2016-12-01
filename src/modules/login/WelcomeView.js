@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     padding: 5
   },
   buttonGroup: {
+    height: 40,
     backgroundColor: 'white'
   },
   buttonGroupText: {
