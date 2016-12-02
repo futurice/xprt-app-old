@@ -11,12 +11,6 @@ import RecoverPasswordViewContainer from './login/RecoverPasswordViewContainer';
 export default function AppRouter(props) {
   const key = props.scene.route.key;
 
-  console.log('Key: ' + key);
-
-  if (key === 'RecoverPassword') {
-    return <RecoverPasswordViewContainer />;
-  }
-
   if (key === 'Counter') {
     return <CounterViewContainer />;
   }

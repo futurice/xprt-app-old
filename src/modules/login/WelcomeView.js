@@ -1,5 +1,6 @@
 import * as NavigationState from '../navigation/NavigationState';
 import * as AuthState from '../auth/AuthState';
+import RecoverPasswordViewContainer from './RecoverPasswordViewContainer';
 import React, {PropTypes} from 'react';
 import {
   StyleSheet,
@@ -20,12 +21,13 @@ const WelcomeView = React.createClass({
 
   getInitialState() {
     return {
-      selectedIndex: 0
+      selectedIndex: 0,
+      isRecoveringPassword: false
     };
   },
 
   updateIndex(selectedIndex) {
-    this.setState({selectedIndex});
+    this.setState({selectedIndex: selectedIndex});
   },
 
   doLogin(credentials) {
@@ -35,41 +37,49 @@ const WelcomeView = React.createClass({
   },
 
   recoverPassword() {
-    console.log('Recover Password Pressed!');
-    this.props.dispatch(NavigationState.pushRoute({
-      key: 'RecoverPassword',
-      title: 'Recover Password Screen'
-    }));
-    // ???
+    this.setState({isRecoveringPassword: true})
+  },
+
+  backToSignIn() {
+    this.setState({isRecoveringPassword: false})
   },
 
   render() {
     const buttons = ['Teacher', 'Expert'];
-    const {selectedIndex} = this.state;
+    const selectedIndex = this.state.selectedIndex;
+    const isRecoveringPassword = this.state.isRecoveringPassword;
 
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          {'Welcome to SCOOL!'}
-        </Text>
-        <Text style={styles.loginText}>
-          {'Log in as:'}
-        </Text>
-        <ButtonGroup
-          onPress={this.updateIndex}
-          selectedIndex={selectedIndex}
-          containerStyle={styles.buttonGroup}
-          textStyle={styles.buttonGroupText}
-          selectedBackgroundColor='yellow'
-          underlayColor='white'
-          buttons={buttons} />
+    if (isRecoveringPassword) {
+      return (
+        <View style={{flex: 1}}>
+          <RecoverPasswordViewContainer backToSignIn={this.backToSignIn} />
+        </View>
+      );
+    } else {
+      return (
+        <View style={styles.container}>
+          <Text style={styles.welcome}>
+            {'Welcome to SCOOL!'}
+          </Text>
+          <Text style={styles.loginText}>
+            {'Log in as:'}
+          </Text>
+          <ButtonGroup
+            onPress={this.updateIndex}
+            selectedIndex={selectedIndex}
+            containerStyle={styles.buttonGroup}
+            textStyle={styles.buttonGroupText}
+            selectedBackgroundColor='yellow'
+            underlayColor='white'
+            buttons={buttons} />
 
-        <LoginForm
-          submit={this.doLogin}
-          recoverPassword={this.recoverPassword}
-          />
-      </View>
-    );
+          <LoginForm
+            submit={this.doLogin}
+            recoverPassword={this.recoverPassword}
+            />
+        </View>
+      );
+    }
   }
 });
 

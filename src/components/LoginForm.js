@@ -49,7 +49,7 @@ export default React.createClass({
 
         <Text
           style={styles.recoverPasswordTextStyle}
-          onPress={() => console.log('Recover Password Pressed!')}
+          onPress={() => this.props.recoverPassword(this.state)}
         >
           Forgot your password?
         </Text>
