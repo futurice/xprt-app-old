@@ -42,8 +42,6 @@ const AppView = React.createClass({
   },
 
   render() {
-    console.log(this.props.isLoggedIn);
-    console.log(this.props.isReady);
     if (!this.props.isReady) {
       return (
         <View>
@@ -70,7 +68,6 @@ const AppView = React.createClass({
       <DrawerLayoutAndroid
         drawerWidth={300}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        ref={'DRAWER_REF'}
         renderNavigationView={() => navigationView}>
         <View style={{flex: 1}}>
           <NavigationViewContainer />
