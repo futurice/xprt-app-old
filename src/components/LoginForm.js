@@ -29,13 +29,18 @@ export default React.createClass({
           style={styles.textInput}
           onChangeText={(email) => this.setState({email})}
           value={this.state.email}
+          returnKeyType="next"
+          onSubmitEditing={() => this.refs['password'].focus()}
         />
         <Text>Password:</Text>
         <TextInput
+          ref="password"
           style={styles.textInput}
           onChangeText={(password) => this.setState({password})}
           secureTextEntry={true}
           value={this.state.password}
+          returnKeyType="done"
+          onSubmitEditing={() => this.props.submit(this.state) }
         />
 
         <Button
