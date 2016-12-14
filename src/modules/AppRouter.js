@@ -7,7 +7,7 @@ import Welcome from './login/WelcomeViewContainer';
 import TeacherLogin from './login/TeacherLoginViewContainer';
 import TeacherRegister from './login/TeacherRegisterViewContainer';
 import RecoverPassword from './login/RecoverPasswordViewContainer';
-import ExpertList from './experts/ExpertsListContainer';
+import ExpertList from './experts/ExpertsViewContainer';
 
 /**
  * AppRouter is responsible for mapping a navigator scene to a view

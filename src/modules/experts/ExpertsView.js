@@ -6,9 +6,11 @@ import {
   StyleSheet
 } from 'react-native';
 
+import { SearchBar, List, ListItem } from 'react-native-elements';
+
 const ExpertsView = React.createClass({
-  propTypes: {
-    dispatch: PropTypes.func.isRequired
+  componentDidMount() {
+    this.props.getExperts();
   },
 
   getInitialState() {
@@ -16,27 +18,47 @@ const ExpertsView = React.createClass({
       rowHasChanged: (r1, r2) => r1 !== r2
     });
     return {
-      dataSource: ds.cloneWithRows([
-        'Expert John', 'Expert Joel', 'Expert James', 'Expert Jimmy', 'Expert Jackson', 'Expert Jillian', 'Expert Julie', 'Expert Devin'])
-      };
+      dataSource: ds
+    };
+  },
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      dataSource: this.state.dataSource.cloneWithRows(nextProps.experts.data)
+    });
+  },
+
+  renderRow (rowData, sectionID) {
+    return (
+      <ListItem
+        roundAvatar
+        key={sectionID}
+        title={rowData.name}
+        subtitle={rowData.subjects.join(', ')}
+        avatar={{uri:rowData.photograph}}
+      />
+    )
+  },
+
+  changeFilter(e) {
+    console.log(e);
   },
 
   render() {
     return (
-      <View style={[styles.container]}>
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={(expertsData) => <Text>{expertsData}</Text>}
-      />
-    </View>
+      <View>
+        <SearchBar
+          lightTheme
+          onChangeText={this.changeFilter}
+          placeholder='Search Experts...' />
+        <List>
+          <ListView
+            dataSource={this.state.dataSource}
+            renderRow={this.renderRow}
+          />
+        </List>
+      </View>
     );
-  }
-});
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 22
   }
 });
 
