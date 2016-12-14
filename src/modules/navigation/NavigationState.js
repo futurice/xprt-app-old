@@ -44,15 +44,6 @@ const initialState = fromJS({
     routes: [{
       key: 'Welcome',
       title: 'Welcome Screen'
-    }, {
-      key: 'TeacherLogin',
-      title: 'Login (Teacher)'
-    }, {
-      key: 'TeacherRegister',
-      title: 'Register (Teacher)'
-    }, {
-      key: 'TeacherRecoverPw',
-      title: 'Forgot Password (Teacher)'
     }]
   },
   ExpertsTab: {
