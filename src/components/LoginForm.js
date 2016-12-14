@@ -14,7 +14,6 @@ export default React.createClass({
   displayName: 'LoginForm',
   propTypes: {
     submit: PropTypes.func.isRequired,
-    recoverPassword: PropTypes.func.isRequired
   },
   getInitialState() {
     return {
@@ -51,13 +50,6 @@ export default React.createClass({
           title='Log in'
           onPress={() => this.props.submit(this.state)}
         />
-
-        <Text
-          style={styles.recoverPasswordTextStyle}
-          onPress={() => this.props.recoverPassword(this.state)}
-        >
-          Forgot your password?
-        </Text>
       </View>
     );
   }
@@ -78,9 +70,4 @@ const styles = StyleSheet.create({
     height: 40,
     fontSize: 20
   },
-  recoverPasswordTextStyle: {
-    color: 'blue',
-    textAlign: 'center',
-    marginTop: 30
-  }
 });

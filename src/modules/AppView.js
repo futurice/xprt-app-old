@@ -50,6 +50,7 @@ const AppView = React.createClass({
       );
     }
 
+    /*
     if (!this.props.isLoggedIn) {
       return (
         <View style={{flex: 1}}>
@@ -57,6 +58,7 @@ const AppView = React.createClass({
         </View>
       );
     }
+    */
 
     return (
       <View style={{flex: 1}}>

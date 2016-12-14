@@ -39,9 +39,9 @@ const RecoverPasswordView = React.createClass({
 
         <Text
           style={styles.signInTextStyle}
-          onPress={() => this.props.backToSignIn()}
+          onPress={() => this.props.back()}
         >
-          Sign in
+          Log in
         </Text>
       </View>
     );

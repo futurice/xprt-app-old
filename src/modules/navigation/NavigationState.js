@@ -34,12 +34,11 @@ const initialState = fromJS({
   tabs: {
     index: 0,
     routes: [
+      {key: 'WelcomeTab', title: 'WELCOME'},
       {key: 'HomeTab', title: 'HOME'},
       {key: 'ProfileTab', title: 'PROFILE'}
     ]
   },
-  // Scenes for the `HomeTab` tab.
-  /*
   WelcomeTab: {
     index: 0,
     routes: [{
@@ -47,13 +46,22 @@ const initialState = fromJS({
       title: 'Welcome Screen'
     }, {
       key: 'TeacherLogin',
-      title: 'Teacher Login'
+      title: 'Login (Teacher)'
     }, {
-      key: 'ExpertLogin',
-      title: 'Expert Login'
+      key: 'TeacherRegister',
+      title: 'Register (Teacher)'
+    }, {
+      key: 'TeacherRecoverPw',
+      title: 'Forgot Password (Teacher)'
     }]
   },
-  */
+  ExpertsTab: {
+    index: 0,
+    routes: [{
+      key: 'ExpertsList',
+      title: 'Experts List'
+    }]
+  },
   HomeTab: {
     index: 0,
     routes: [
