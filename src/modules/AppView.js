@@ -42,8 +42,6 @@ const AppView = React.createClass({
   },
 
   render() {
-    console.log(this.props.isLoggedIn);
-    console.log(this.props.isReady);
     if (!this.props.isReady) {
       return (
         <View>
