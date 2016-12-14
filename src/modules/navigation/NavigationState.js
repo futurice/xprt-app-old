@@ -34,9 +34,9 @@ const initialState = fromJS({
   tabs: {
     index: 0,
     routes: [
-      {key: 'WelcomeTab', title: 'WELCOME'},
-      {key: 'HomeTab', title: 'HOME'},
-      {key: 'ProfileTab', title: 'PROFILE'}
+      {key: 'WelcomeTab', title: 'Welcome'},
+      {key: 'ExpertsTab', title: 'Experts'},
+      {key: 'ProfileTab', title: 'Profile'}
     ]
   },
   WelcomeTab: {
@@ -61,12 +61,6 @@ const initialState = fromJS({
       key: 'ExpertsList',
       title: 'Experts List'
     }]
-  },
-  HomeTab: {
-    index: 0,
-    routes: [
-      {key: 'Counter', title: 'Counter Screen'}
-    ]
   },
   // Scenes for the `ProfileTab` tab.
   ProfileTab: {
