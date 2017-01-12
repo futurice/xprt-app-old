@@ -13,7 +13,7 @@ import {
 export default React.createClass({
   displayName: 'LoginForm',
   propTypes: {
-    submit: PropTypes.func.isRequired,
+    submit: PropTypes.func.isRequired
   },
   getInitialState() {
     return {
@@ -29,27 +29,32 @@ export default React.createClass({
           style={styles.textInput}
           onChangeText={(email) => this.setState({email})}
           value={this.state.email}
-          returnKeyType="next"
+          returnKeyType='next'
           onSubmitEditing={() => this.refs['password'].focus()}
         />
         <Text>Password:</Text>
         <TextInput
-          ref="password"
+          ref='password'
           style={styles.textInput}
           onChangeText={(password) => this.setState({password})}
           secureTextEntry={true}
           value={this.state.password}
-          returnKeyType="done"
+          returnKeyType='done'
           onSubmitEditing={() => this.props.submit(this.state) }
         />
 
-        <Button
-          buttonStyle={styles.buttonStyle}
-          textStyle={styles.buttonTextStyle}
-          icon={{name: 'lock-open', color: 'black'}}
-          title='Log in'
-          onPress={() => this.props.submit(this.state)}
-        />
+        <View style={styles.buttonContainer}>
+          <Button
+            raised
+            style={styles.button}
+            onPress={() => this.props.submit(this.state)}
+            title={'Log in'.toUpperCase()} />
+          <Text style={styles.orText}>OR</Text>
+          <Button
+            style={styles.button}
+            onPress={this.props.register}
+            title={'Create an account'.toUpperCase()} />
+        </View>
       </View>
     );
   }
@@ -57,17 +62,31 @@ export default React.createClass({
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: 'white',
     margin: 20
   },
-  buttonStyle: {
-    marginTop: 20,
-    backgroundColor: 'yellow'
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: 'white',
+    marginTop: 30
   },
-  buttonTextStyle: {
-    color: 'black'
+  button: {
+    flex: 1,
+    padding: 30,
+    flexGrow: 1,
+    backgroundColor: '#D8D8D8',
+  },
+  orText: {
+    textAlign: 'center',
+    margin: 10
   },
   textInput: {
     height: 40,
-    fontSize: 20
-  },
+    fontSize: 20,
+    borderBottomColor: 'gray',
+    borderBottomWidth: 1,
+    marginBottom: 20
+  }
 });

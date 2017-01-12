@@ -33,8 +33,8 @@ const initialState = {
     index: 0,
     routes: [
       {key: 'ExpertsTab', title: 'Experts'},
-      {key: 'ProfileTab', title: 'Profile'},
-      {key: 'WelcomeTab', title: 'Lectures'}
+      {key: 'WelcomeTab', title: 'Profile'},
+      {key: 'ProfileTab', title: 'Lectures'}
     ]
   },
   ExpertsTab: {
@@ -56,7 +56,7 @@ const initialState = {
     index: 0,
     routes: [{
       key: 'Welcome',
-      title: 'Welcome Screen'
+      title: 'Log in'
     }]
   }
 };

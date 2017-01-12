@@ -18,7 +18,7 @@ export default React.createClass({
         onPress={this.props.action}
         style={[styles.button, this.props.isSelected && styles.selected]}
         >
-        <Text>{this.props.text}</Text>
+        <Text style={this.props.isSelected && styles.textSelected}>{this.props.text}</Text>
       </TouchableOpacity>
     );
   }
@@ -31,6 +31,9 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   selected: {
-    backgroundColor: 'yellow'
+    backgroundColor: '#4A4A4A'
+  },
+  textSelected: {
+    color: 'white'
   }
 });
