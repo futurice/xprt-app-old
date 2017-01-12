@@ -4,7 +4,7 @@ import rest from '../../services/rest';
 
 export default connect(
   state => ({
-    experts: state.getIn(['rest', 'experts']).toJS()
+    experts: state.experts
   }),
   dispatch => ({
     getExperts() {
