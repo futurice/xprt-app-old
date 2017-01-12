@@ -50,7 +50,7 @@ const ExpertsView = React.createClass({
         <SearchBar
           lightTheme
           onChangeText={this.changeFilter}
-          placeholder='Search Experts...' />
+          placeholder='Search for people, tags, location, etc...' />
         <List>
           <ListView
             dataSource={this.state.dataSource}
