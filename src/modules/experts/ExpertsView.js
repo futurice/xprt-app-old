@@ -56,12 +56,12 @@ const ExpertsView = React.createClass({
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <SearchBar
           lightTheme
           onChangeText={this.changeFilter}
           placeholder='Search for people, tags, location, etc...' />
-        <List>
+        <List containerStyle={styles.list}>
           <ListView
             dataSource={this.state.dataSource}
             renderRow={this.renderRow}
@@ -73,14 +73,15 @@ const ExpertsView = React.createClass({
 });
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   subtitleView: {
-    flexDirection: 'column',
     paddingLeft: 10,
     paddingTop: 5
   },
   subtitleText: {
     marginRight: 7,
-    height: 25,
     color: 'white',
     backgroundColor: '#D8D8D8',
     borderRadius: 5,
@@ -89,8 +90,13 @@ const styles = StyleSheet.create({
     marginTop: 7
   },
   tagsWrapper: {
+    alignItems: 'flex-start',
     flexDirection: 'row',
     flexWrap: 'wrap'
+  },
+  list: {
+    flex: 1,
+    marginTop: 0
   }
 });
 
