@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 30,
     flexGrow: 1,
-    backgroundColor: '#D8D8D8',
+    backgroundColor: '#D8D8D8'
   },
   orText: {
     textAlign: 'center',
@@ -85,8 +85,6 @@ const styles = StyleSheet.create({
   textInput: {
     height: 40,
     fontSize: 20,
-    borderBottomColor: 'gray',
-    borderBottomWidth: 1,
     marginBottom: 20
   }
 });
