@@ -33,8 +33,8 @@ const initialState = {
     index: 0,
     routes: [
       {key: 'ExpertsTab', title: 'Experts'},
-      {key: 'ProfileTab', title: 'Profile'},
-      {key: 'WelcomeTab', title: 'Lectures'}
+      {key: 'WelcomeTab', title: 'Profile'},
+      {key: 'LecturesTab', title: 'Lectures'}
     ]
   },
   ExpertsTab: {
@@ -44,12 +44,12 @@ const initialState = {
       title: 'Experts List'
     }]
   },
-  // Scenes for the `ProfileTab` tab.
-  ProfileTab: {
+  // Scenes for the `LecturesTab` tab.
+  LecturesTab: {
     index: 0,
     routes: [{
-      key: 'Color',
-      title: 'Color Screen'
+      key: 'Lectures',
+      title: 'Lectures'
     }]
   },
   WelcomeTab: {

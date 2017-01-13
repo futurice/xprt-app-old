@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Counter from './counter/CounterViewContainer';
-import Color from './colors/ColorViewContainer';
+import Lectures from './lectures/LecturesViewContainer';
 import Welcome from './login/WelcomeViewContainer';
 import TeacherLogin from './login/TeacherLoginViewContainer';
 import TeacherRegister from './login/TeacherRegisterViewContainer';
@@ -39,13 +39,8 @@ export default function AppRouter(props) {
     return <RecoverPassword />;
   }
 
-  if (key.indexOf('Color') === 0) {
-    const index = props.scenes.indexOf(props.scene);
-    return (
-      <Color
-        index={index}
-      />
-    );
+  if (key === 'Lectures') {
+    return <Lectures />;
   }
 
   throw new Error('Unknown navigation key: ' + key);
